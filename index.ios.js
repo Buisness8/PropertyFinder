@@ -6,6 +6,7 @@
 
 import React, { Component } from 'react';
 import ReactNative from 'react-native'
+var SearchPage = require('./SearchPage')
 const {
   AppRegistry,
   StyleSheet,
@@ -14,13 +15,6 @@ const {
   NavigatorIOS
 } = ReactNative;
 
-class HelloWorld extends Component {
-  render() {
-    return (
-       <Text style={styles.text}>Hello World (Again)</Text>
-    );
-  }
-}
 
 class PropertyFinder extends React.Component {
   render() {
@@ -29,7 +23,7 @@ class PropertyFinder extends React.Component {
         style={styles.container}
         initialRoute={{
           title: 'Property Finder',
-          component: HelloWorld,
+          component: SearchPage,
         }}/>
     );
   }
