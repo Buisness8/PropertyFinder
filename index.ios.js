@@ -6,7 +6,7 @@
 
 import React, { Component } from 'react';
 import ReactNative from 'react-native'
-var SearchPage = require('./SearchPage')
+var SearchPage = require('./components/SearchPage')
 const {
   AppRegistry,
   StyleSheet,

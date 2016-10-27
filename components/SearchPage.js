@@ -2,6 +2,7 @@
 
 import React, {Component} from 'react';
 import ReactNative from 'react-native';
+var SearchResults = require('./SearchResults');
 const {
 	StyleSheet,
 	Text,
@@ -121,7 +122,7 @@ class SearchPage extends Component {
 					underlayColor='#99d9f4'>
 					<Text style={styles.buttonText}>Location</Text>
 				</TouchableHighlight>
-				<Image source ={require('./Resources/house.png')} style={styles.image}/>
+				<Image source ={require('../Resources/house.png')} style={styles.image}/>
 				{spinner}
 				<Text style={styles.description}>{this.state.message}</Text>
 			</View>
@@ -154,7 +155,11 @@ class SearchPage extends Component {
 	_handleResponse(response){
 		this.setState({ isLoading: false , message: '' });
 		if(response.application_response_code.substr(0,1)==='1'){
-			console.log('properties found: ' + response.listings.length)
+			this.props.navigator.push({
+  				title: 'Results',
+				component: SearchResults,
+				passProps: {listings: response.listings}
+			});
 		} else{
 			this.setState({ message: 'Location not recognized; please try again.'})
 		}
