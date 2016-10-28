@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
 		color: 'red'
 	},
 	image:{
-		width: 217,
+		width: 216,
 		height: 138
 	}
 });
