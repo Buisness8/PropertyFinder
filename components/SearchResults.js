@@ -35,7 +35,7 @@ var styles = StyleSheet.create({
   },
   rowContainer: {
     flexDirection: 'row',
-    padding: 10
+    padding: 11
   }
 });
 
